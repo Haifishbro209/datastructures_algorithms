@@ -1,7 +1,7 @@
 from create_array import *
+import time
 
-
-def sort(arr):
+def bubble_sort(arr):
     length = len(arr)
     for j in range(length):
         for i in range(length - j):
@@ -15,6 +15,13 @@ def sort(arr):
                 arr[i+1] = a
     return arr
 
-arr = random_array(100000)
-sorted = sort(arr)
-print(f'{sorted} \n \n \n {is_sorted(sorted)}')
+arr = random_array(1000)
+start = time.time()
+bubble_sort(arr)
+end = time.time()
+print(f'Bubble sort: {end-start:.10f}')
+
+start = time.time()
+arr.sort()
+end= time.time()
+print(f'\n.sort(): {end-start:.10f}')
