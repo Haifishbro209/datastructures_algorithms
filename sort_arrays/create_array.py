@@ -21,3 +21,12 @@ def reversed_array(length = 100):
         arr.append(-i + int(0.5 * length))
     return arr
 
+def is_sorted(arr):
+    for i in range(1,len(arr) -1):
+        if arr[i] < arr[i -1]:
+            return False
+    return True
+
+if __name__ == '__main__':
+    arr = random_array(1000)
+    print(is_sorted(arr))

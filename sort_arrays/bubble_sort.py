@@ -1,4 +1,4 @@
-from create_array import random_array
+from create_array import *
 
 
 def sort(arr):
@@ -14,4 +14,6 @@ def sort(arr):
             arr[i+1] = a
     return arr
 
-print(sort(random_array()))
+arr = random_array(100)
+sorted = sort(arr)
+print(f'{sorted} \n \n \n {is_sorted(sorted)}')
