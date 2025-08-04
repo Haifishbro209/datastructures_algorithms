@@ -56,7 +56,7 @@ for i in range(10000):
     dif.append(swap - one_line)
 
 for diference in dif:
-    
+    if 
 
 print(f'swap faster {swap_was_faster}')
 print(f' one line faster {one_line} ')
