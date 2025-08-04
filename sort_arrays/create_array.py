@@ -1,5 +1,5 @@
 from random import randint
-import sys
+
 def random_array(length = 100):
     arr = []
     for i in range(length):
@@ -28,4 +28,4 @@ def is_sorted(arr):
     return True
 
 if __name__ == '__main__':
-    print("Aktuelles Limit:", sys.getrecursionlimit())
+    pass

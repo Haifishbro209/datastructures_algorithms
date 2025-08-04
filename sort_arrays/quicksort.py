@@ -19,9 +19,8 @@ def quicksort(arr):
     
     random_index = randint(0,length-1)
     pivot = arr[random_index]
-    swap =arr[length -1]
-    arr[length -1] = pivot
-    arr[random_index] = swap
+    arr[length -1] , arr[random_index] = arr[random_index] , arr[length-1]
+
 
     i = -1
     for j in range(length-1):
@@ -45,8 +44,11 @@ if __name__ == '__main__':
 
 
     start_time = time()
-    quicksorted_array = quicksort(test_array[:])
+    quicksorted_array = quicksort(test_array)
     quicksort_time = time() - start_time
+
+    if not is_sorted(quicksorted_array):
+        print('QUICKSORT ERROR')
 
     start_time = time()
     sorted_arr = test_array.sort()
