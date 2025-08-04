@@ -4,20 +4,26 @@ from sys import setrecursionlimit
 
 setrecursionlimit(400000)
 
-test_array = reversed_array(100000)
+test_array = reversed_array(10000)
 
 
 
 def quicksort(arr):
     first_part = None
     second_part = None
+
     if arr == []:
         return []
     length = len(arr)
     if length == 1:
         return arr
-    pivot = arr[length-1]
-    swap = 0
+    
+    random_index = randint(0,length-1)
+    pivot = arr[random_index]
+    swap =arr[length -1]
+    arr[length -1] = pivot
+    arr[random_index] = swap
+
     i = -1
     for j in range(length-1):
         if arr[j] < pivot:

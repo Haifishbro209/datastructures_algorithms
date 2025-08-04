@@ -15,7 +15,7 @@ def bubble_sort(arr):
                 arr[i+1] = a
     return arr
 
-arr = random_array(1000)
+arr = random_array(10000)
 start = time.time()
 bubble_sort(arr)
 end = time.time()
