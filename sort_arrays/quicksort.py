@@ -4,7 +4,6 @@ from sys import setrecursionlimit
 
 setrecursionlimit(400000)
 
-test_array = reversed_array(10000)
 
 
 
@@ -39,8 +38,19 @@ def quicksort(arr):
     arr[i+2: length] = quicksort(arr[i + 2: length])
 
     return arr
-start=time()
-test_array = quicksort(test_array)
-end=time()
-print(end - start)
-print(is_sorted(test_array))
+
+if __name__ == '__main__':
+    # Test array
+    test_array = sorted_array(10000)
+
+
+    start_time = time()
+    quicksorted_array = quicksort(test_array[:])
+    quicksort_time = time() - start_time
+
+    start_time = time()
+    sorted_arr = test_array.sort()
+    sort_time = time() - start_time
+
+    print(f"Quicksort time: {quicksort_time:.6f} seconds")
+    print(f"Built-in sort time: {sort_time:.6f} seconds")
