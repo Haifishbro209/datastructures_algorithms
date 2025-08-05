@@ -1,6 +1,6 @@
 import sys
 from time import time
-from create_array import *
+from sort_arrays.create_array import *
 
 
 print("Aktuelles Limit:", sys.getrecursionlimit())
@@ -20,7 +20,6 @@ def swap_time():
     arr[random_index] = swap
     end = time()
     time_passed = end -start
-    print(f'swap variable time {time_passed:.20f}')
     return time_passed
 
 
@@ -29,14 +28,13 @@ def one_line_time():
     arr[length -1] , arr[random_index] = arr[random_index] , arr[length-1]
     end = time()
     time_passed = end -start
-    print(f'one line swap time {time_passed:.20f}')
     return time_passed
 
 swap_was_faster = 0
 one_line_was_faster = 0
 equal = 0
 dif = []
-for i in range(10000):
+for i in range(1000000):
     if i % 2 == 0:
         swap = swap_time()
         one_line = one_line_time()
@@ -55,9 +53,10 @@ for i in range(10000):
 
     dif.append(swap - one_line)
 
-for diference in dif:
-    if 
+
+average_difference = sum(dif) / len(dif)
+print(f'AVG dif: {average_difference:.20f} Sekunden')
 
 print(f'swap faster {swap_was_faster}')
-print(f' one line faster {one_line} ')
+print(f' one line faster {one_line_was_faster} ')
 print(f'equal {equal}')
