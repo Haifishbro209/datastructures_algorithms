@@ -1,5 +1,8 @@
-array = [7,0,45,5,93,11,6]
+from create_array import *
+from time import time
 
+array = random_array(10000)
+arr = array
 
 def mergesort(arr):
     length = len(arr)
@@ -51,9 +54,15 @@ def merge(left, right, array):
         i += 1
         r += 1
 
-print(array)
-
+start = time()
 mergesort(array)
+end = time()
+print(f'time = {end -start:.10f}')
+print(is_sorted(array))
 
-print(array)
 
+start = time()
+arr.sort()
+end = time()
+print(f'time .sort() = {end -start:.10f}')
+print(is_sorted(arr))
