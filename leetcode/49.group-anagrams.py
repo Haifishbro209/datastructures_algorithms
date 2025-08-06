@@ -11,18 +11,16 @@ from collections import defaultdict
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         hashmap = defaultdict(list)
-        for i in range(len(strs)):
-            string = ''.join(sorted(strs[i]))
-            hashmap[string].append(i)
+        for string in strs:
+            sorted_str = ''.join(sorted(string))
+            hashmap[sorted_str].append(string)
         
         output = []
 
         for anagram in hashmap:
             indices=hashmap[anagram]
-            anagrams = []
-            for i in indices:
-                anagrams.append(strs[i])
-            output.append(anagrams)
+            
+            output.append(indices)
         
         return output
 # @lc code=end
