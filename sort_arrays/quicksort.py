@@ -8,9 +8,6 @@ setrecursionlimit(400000)
 
 
 def quicksort(arr):
-    first_part = None
-    second_part = None
-
     if arr == []:
         return []
     length = len(arr)
