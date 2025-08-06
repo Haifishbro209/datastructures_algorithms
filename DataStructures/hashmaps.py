@@ -1,6 +1,7 @@
 from collections import defaultdict, Counter, OrderedDict
 from typing import Dict, List, Any
 
+## hashmaps are dictionaies
 
 #100% vibe coded one prompt
 
