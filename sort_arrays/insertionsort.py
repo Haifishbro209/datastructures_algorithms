@@ -1,21 +1,31 @@
-
+from time import time
+from create_array import *
 
 def insertionsort(arr):
     length = len(arr)
     for i in range(1,length):
         temp = arr[i]
         j = i-1
-        while temp < arr[j]:
-            arr[j +1] = arr[j]
-            if j > 1:
-                break
-            else:
-                j -=1
-        arr[j] = temp
+        while j >= 0 and arr[j] > temp:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j +1] = temp
     
     return arr
 
 
-array = [3,8,9,6,1,7,2,4]
+array = random_array(10000)
 
-print(insertionsort(array))
+start = time()
+new_arr = insertionsort(array)
+end = time()
+
+print(f'insertionsort : {end -start:.10f}')
+
+print(is_sorted(new_arr))
+
+start = time()
+new_arr = array.sort()
+end = time()
+
+print(f'.sort() : {end - start:.20f}')
